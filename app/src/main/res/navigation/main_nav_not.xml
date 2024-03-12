@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_not"
+    app:startDestination="@id/notlarFragment">
+
+    <fragment
+        android:id="@+id/notlarFragment"
+        android:name="com.free.odev7.ui.fragment.NotlarFragment"
+        android:label="fragment_notlar"
+        tools:layout="@layout/fragment_notlar" >
+        <action
+            android:id="@+id/notEkleGecis"
+            app:destination="@id/notEkleFragment" />
+        <action
+            android:id="@+id/notGoruntuleGecis"
+            app:destination="@id/notGoruntuleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notEkleFragment"
+        android:name="com.free.odev7.ui.fragment.NotEkleFragment"
+        android:label="fragment_kisi_kayit"
+        tools:layout="@layout/fragment_not_ekle" >
+        <action
+            android:id="@+id/notlarGeciss"
+            app:destination="@id/notlarFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notGoruntuleFragment"
+        android:name="com.free.odev7.ui.fragment.NotGoruntuleFragment"
+        android:label="fragment_kisi_detay"
+        tools:layout="@layout/fragment_not_goruntule" >
+        <argument
+            android:name="not"
+            app:argType="com.free.odev7.data.entity.Notlar" />
+        <action
+            android:id="@+id/notlarGecis"
+            app:destination="@id/notlarFragment" />
+    </fragment>
+</navigation>
